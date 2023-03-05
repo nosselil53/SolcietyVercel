@@ -5,7 +5,6 @@ import { Col, Container, Row } from 'reactstrap';
 const Page404 = () => {
   return (
     <div>
-      <CommonLayout title='404' parent='home'>
         <section className='error-main'>
           <ul className='page-decore'>
             <li className='top'>
@@ -47,7 +46,6 @@ const Page404 = () => {
             </Row>
           </Container>
         </section>
-      </CommonLayout>
     </div>
   );
 };
