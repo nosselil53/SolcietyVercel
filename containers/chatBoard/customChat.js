@@ -188,7 +188,7 @@ const CustomChat = (props) => {
                                 <li>
                                   <a
                                     className="icon-btn btn-outline-light button-effect btn-xl "
-                                    href="https://www.google.com/"
+                                    href="https://nosselil53.github.io/Solciety-community-gallery/"
                                     data-bs-toggle="modal"
                                     data-bs-target="#audiorcvcall"
                                     data-bs-dismiss="modal"
