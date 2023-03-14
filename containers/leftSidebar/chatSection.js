@@ -74,7 +74,7 @@ const ChatSection = () => {
                     aria-selected='true'
                     data-to='group_chat'
                   >
-                    Group
+                    Details
                   </NavLink>
                 </NavItem>
               </Nav>
