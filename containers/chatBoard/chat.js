@@ -358,7 +358,7 @@ const Chat = (props) => {
               toggle={() => setBlockModal(!blockModal)}
             ></ModalHeader>
             <ModalBody>
-              <h3>Do you want to block this user?</h3>
+              <h3>Do you want to leave this hub?</h3>
               <div className='delete-btn'>
                 <Button
                   className='button-effect'
