@@ -1,6 +1,8 @@
 
 
+.roomtitle{
 
+color: white;  }
 
 /* custom scrollbar */
 ::-webkit-scrollbar {
@@ -45,7 +47,7 @@
       --bs-green: #198754;
       --bs-teal: #20c997;
       --bs-cyan: #0dcaf0;
-      --bs-white: #fff;
+      --bs-white: #0b0418;
       --bs-gray: #6c757d;
       --bs-gray-dark: #343a40;
       --bs-primary: #0d6efd;
@@ -54,7 +56,7 @@
       --bs-info: #0dcaf0;
       --bs-warning: #ffc107;
       --bs-danger: #dc3545;
-      --bs-light: #f8f9fa;
+      --bs-light: #0b0418;
       --bs-dark: #212529;
       --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -102,6 +104,8 @@
   
   .glow2 {
     transition: transform .4s ease;
+    scale: 120%;
+  
   
       }
   
@@ -159,7 +163,7 @@
       font-weight:400;
       line-height:1.5;
       color:#212529;
-      background-color:#fff;
+      background-color:#0000;
       -webkit-text-size-adjust:100%;
       -webkit-tap-highlight-color:rgba(0,0,0,0)
   }
@@ -321,7 +325,7 @@
   kbd{
       padding:.2rem .4rem;
       font-size:.875em;
-      color:#fff;
+      color:red;
       background-color:#212529;
       border-radius:.2rem
   }
@@ -347,8 +351,8 @@
       text-align:left
   }
   th{
-      text-align:inherit;
-      text-align:-webkit-match-parent
+      text-align:-webkit-match-parent;
+      text-align:inheritt
   }
   thead,tbody,tfoot,tr,td,th{
       border-color:inherit;
@@ -362,8 +366,8 @@
       border-radius:0
   }
   button:focus{
-      outline:dotted 1px;
-      outline:-webkit-focus-ring-color auto 5px
+      outline:-webkit-focus-ring-color auto 5px;
+      outline:dotted 1pxx
   }
   input,button,select,optgroup,textarea{
       margin:0;
@@ -384,7 +388,9 @@
       display:none
   }
   button,[type="button"],[type="reset"],[type="submit"]{
-      -webkit-appearance:button
+      -webkit-appearance:button;
+    
+
   }
   button:not(:disabled),[type="button"]:not(:disabled),[type="reset"]:not(:disabled),[type="submit"]:not(:disabled){
       cursor:pointer
@@ -4872,13 +4878,13 @@
       background-color:#f8f9fa !important
   }
   .bg-dark{
-      background-color:#212529 !important
+      background-color:#0000 !important
   }
   .bg-body{
-      background-color:#fff !important
+      background-color:#000 !important
   }
   .bg-white{
-      background-color:#fff !important
+      background-color:#000 !important
   }
   .bg-transparent{
       background-color:rgba(0,0,0,0) !important
@@ -5326,7 +5332,8 @@
       text-transform:none
   }
   [type=submit],[type=reset],button,html [type=button]{
-      -webkit-appearance:button
+      -webkit-appearance:button;
+      
   }
   [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{
       border-style:none;
@@ -6653,7 +6660,7 @@
       }
   }
   body{
-      background-color:#fff;
+      background-color:#000;
       font-size:calc(12px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
       overflow-x:hidden;
       font-family:"Montserrat",sans-serif,"Roboto",sans-serif;
@@ -6984,7 +6991,7 @@
       background-color:#ff4e2b !important
   }
   .bg-light{
-      background-color:#eff1f2 !important
+      background-color:#18171f !important
   }
   .bg-warning{
       background-color:#ffc514 !important
@@ -7168,7 +7175,7 @@
       transition:all 0.3s ease
   }
   .btn-light{
-      background-color:#eff1f2;
+      background-color:#18171f;
       border-color:#eff1f2 !important;
       color:#fff !important;
       -webkit-transition:all 0.3s ease;
@@ -7448,7 +7455,7 @@
       -webkit-transition:all 0.3s ease;
       transition:all 0.3s ease;
       color:#223645 !important;
-      background-color:#eff1f2 !important
+      background-color:#18171f !important
   }
   .icon-btn.btn-outline-light.disabled,.icon-btn.btn-outline-light:disabled{
       background-color:rgba(239,241,242,0.1) !important;
@@ -7567,7 +7574,7 @@
       animation:grow 1s ease-out infinite
   }
   .dot-btn.dot-light:before{
-      background-color:#eff1f2 !important;
+      background-color:#18171f !important;
       background-color:#223645 !important
   }
   .dot-btn.dot-light.grow:after{
@@ -8337,7 +8344,7 @@
       margin-left:0.7rem !important
   }
   .contact-chat>ul.str-msg li .contact-name .msg-box{
-      margin-top:5px
+      margin-top:5px;
   }
   .contact-chat>ul.str-msg li .msg-box>li>h5,.contact-chat>ul.str-msg li .msg-box>li>.h5{
       padding:8px 25px;
@@ -8505,7 +8512,8 @@
   .contact-chat>ul>li .contact-name h5,.contact-chat>ul>li .contact-name .h5{
       display:inline-block;
       padding-right:20px;
-      line-height:1.4
+      line-height:1.4;
+      margin-left: 10px;
   }
   .contact-chat>ul>li .contact-name h6,.contact-chat>ul>li .contact-name .h6{
       display:inline-block
@@ -8882,7 +8890,7 @@
       height:20px
   }
   .chat-main li.active{
-      background-color:#eff7fe;
+      background-color:#0a0417;
       border-left:4px solid #1c9dea;
       -webkit-transition:all 0.3s ease;
       transition:all 0.3s ease
@@ -9745,7 +9753,7 @@
       overflow:auto;
       overflow-x:hidden;
       overflow-y:auto;
-      border-right:1px solid #eff1f2;
+      border-right:1px solid #414248;
       padding:40px 0
   }
   .chitchat-container .chitchat-left-sidebar{
@@ -9762,7 +9770,7 @@
       z-index:1;
       -webkit-transition:all 0.7s;
       transition:all 0.7s;
-      background-color:#fff
+      background-color:#141420
   }
   .chitchat-container .chitchat-right-sidebar{
       min-width:350px;
@@ -10233,7 +10241,7 @@
   .chitchat-container .main-nav .logo-warpper{
       text-align:center;
       padding-bottom:35px;
-      border-bottom:1px solid #eff1f2
+      border-bottom:1px solid #414248;
   }
   .chitchat-container .main-nav .logo-warpper img{
       height:40px
@@ -10273,7 +10281,7 @@
       overflow-y:auto;
       top:0;
       bottom:0;
-      background-color:#fff;
+      background-color:#0a0417;
       z-index:0;
       width:400px;
       min-width:400px;
@@ -10398,7 +10406,7 @@
       position:fixed;
       width:400px;
       top:0;
-      background-color:#fff;
+      background-color:#0a0417;
       padding-top:40px;
       z-index:1
   }
@@ -10656,38 +10664,25 @@
   .menu-trigger{
       cursor:pointer
   }
-  . .sidebar-toggle .main-nav.on ~ .chitchat-main .message-input{
-      width:calc(100% - 890px)
-  }
-  . .chitchat-container .chitchat-main{
-      width:calc(100% - 890px);
-      -webkit-transition:all 0.7s;
-      transition:all 0.7s
-  }
-  . .chitchat-container .chitchat-main.small-sidebar{
-      width:calc(100% - 590px);
-      -webkit-transition:all 0.7s;
-      transition:all 0.7s
-  }
-  . .chitchat-container .chitchat-main.small-sidebar .message-input{
+
+
+   .chitchat-container  .message-input{
       width:calc(100% - 500px)
   }
-  . .chitchat-container .chitchat-main.small-sidebar .messages .contact-details{
+   .chitchat-container  .messages .contact-details{
       width:calc(100vw - 575px)
   }
-  . .sidebar-toggle .main-nav.on ~ .chitchat-main .contact-details{
+   .sidebar-toggle .main-nav.on ~ .chitchat-main .contact-details{
       width:calc(100vw - 980px);
       -webkit-transition:all 0.3s ease;
       transition:all 0.3s ease
   }
-  . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details{
+   .sidebar-toggle .main-nav.on ~  .contact-details{
       width:calc(100vw - 680px);
       -webkit-transition:all 0.3s ease;
       transition:all 0.3s ease
   }
-  . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .message-input{
-      width:calc(100% - 590px)
-  }
+ 
   .menu-active .chitchat-container .chitchat-main{
       width:calc(100% - 850px);
       -webkit-transition:all 0.7s;
@@ -10703,15 +10698,7 @@
       -webkit-transition:all 0.9s ease;
       transition:all 0.9s ease
   }
-  . .sidebar-toggle .main-nav:not(.on) ~ .chitchat-main:not(.small-sidebar){
-      width:calc(100% - 790px)
-  }
-  . .sidebar-toggle .main-nav:not(.on) ~ .chitchat-main:not(.small-sidebar) .contact-details{
-      width:calc(100vw - 880px)
-  }
-  . .sidebar-toggle .main-nav:not(.on) ~ .chitchat-main:not(.small-sidebar) .message-input{
-      width:calc(100% - 790px)
-  }
+
   .sidebar-toggle .main-nav{
       -webkit-transition:all 0.3s ease;
       transition:all 0.3s ease;
@@ -11347,7 +11334,7 @@
       overflow-y:auto;
       background-blend-mode:overlay;
       top:0;
-      background-color:#eff7fe;
+      background-color:#141420;
       display:none;
       -webkit-animation:fadeInLeft 300ms ease-in-out;
       animation:fadeInLeft 300ms ease-in-out
@@ -11359,9 +11346,9 @@
   }
   .chitchat-main .messages .contact-details{
       padding:20px 30px;
-      background-color:#fff;
-      -webkit-box-shadow:0 -55px 0px 0px #eff7fe;
-      box-shadow:0 -55px 0px 0px #eff7fe;
+      background-color:#0b0418;
+      -webkit-box-shadow:0 -55px 0px 0px #141420;
+      box-shadow:0 -55px 0px 0px #141420;
      
       position:fixed;
       width:calc(100vw - 600px);
@@ -11460,20 +11447,23 @@
   .chitchat-main .message-input{
       height:95px;
       position:fixed;
-      background-color:#fff;
-      width:calc(100% - 400px);
+      background-color:#0b0418;
+      width:calc(100% - 300px);
       -webkit-transition:all 0.5s;
       transition:all 0.5s;
       padding:26px 45px;
+     
       z-index:9;
-      bottom:0
+      bottom:0;
+      left: 500px;
   }
   .chitchat-main .message-input input{
       width:calc(100% - 300px);
       border:0;
       font-size:16px;
       color:#647589;
-      font-family:"Montserrat",sans-serif
+      font-family:"Montserrat",sans-serif;
+      margin-right:50px;
   }
   .chitchat-main .message-input input:focus{
       -webkit-box-shadow:none;
@@ -11781,11 +11771,11 @@
       border-bottom:1px solid #414248
   }
   .dark .chitchat-container .chitchat-left-sidebar .recent-default{
-      color:#fff;
+      color:#0b0418;
       background-color:#0b0418
   }
   .dark .chitchat-container .chitchat-left-sidebar .recent-default .recent{
-      color:#fff;
+      color:#0b0418;
       background-color:#0b0418
   }
   .dark .chitchat-container .chitchat-left-sidebar .icon-btn.btn-outline-light{
@@ -12541,7 +12531,7 @@
   }
   .dark .app-sidebar .default-form select{
       background:url(../images/drop-1.png) #181720 no-repeat scroll 95.5% center;
-      color:#fff
+      color:#000
   }
   .dark .app-sidebar .app-list-ul .title{
       border-bottom:1px solid #414248
@@ -12562,7 +12552,7 @@
       color:#fff !important
   }
   .dark .modal-content{
-      background-color:#0b0418
+      background-color:transparent;
   }
   .dark .modal-content .default-form .form-group input{
       background-color:#181720
@@ -13336,7 +13326,7 @@
       border-radius:5px;
       -webkit-filter:drop-shadow(0px 5px 15px rgba(29,159,250,0.35));
       filter:drop-shadow(0px 5px 15px rgba(29,159,250,0.35));
-      background-color:#ffffff
+      background-color:#0a0417
   }
   .landing-page-header header .fixed{
       background-color:#278bff !important
@@ -14017,15 +14007,7 @@
       .sidebar-toggle .main-nav:not(.on) ~ .chitchat-main.small-sidebar{
           width:calc(100% - 390px)
       }
-      . .chitchat-container .chitchat-main.small-sidebar .messages .contact-details{
-          width:calc(100vw - 475px)
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details{
-          width:calc(100vw - 580px)
-      }
-      . .chitchat-container .chitchat-main.small-sidebar{
-          width:calc(100% - 490px)
-      }
+ 
       .theme-tab.tab-icon .nav-tabs .nav-item .nav-link{
           padding:7px 15px
       }
@@ -14067,21 +14049,7 @@
       .sidebar-toggle .main-nav.on ~ .chitchat-main .message-input{
           width:calc(100% - 400px)
       }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main .message-input{
-          width:calc(100% - 790px)
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main .contact-details{
-          width:calc(100vw - 880px)
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 490px)
-      }
-      . .chitchat-container .chitchat-main{
-          width:calc(100% - 720px)
-      }
-      . .chitchat-container .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 390px)
-      }
+
       .chitchat-main .message-input{
           width:calc(100% - 400px)
       }
@@ -14207,15 +14175,8 @@
       .sidebar-toggle .main-nav.on ~ .chitchat-main .contact-details ul li{
           padding-left:4px
       }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details ul li{
-          padding-left:21px
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main .messages .contact-details ul li{
-          padding-left:8px
-      }
-      . .chitchat-container .chitchat-main.small-sidebar{
-          width:calc(100% - 490px)
-      }
+    
+ 
       .chitchat-main .messages .contact-details{
           padding:15px 15px
       }
@@ -14281,36 +14242,7 @@
       header .landing-header.fixed{
           padding:5px 15px
       }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details{
-          width:74.3vw !important
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 215px)
-      }
-      . .sidebar-toggle .main-nav.on ~ .show-recent ~ .chitchat-main.small-sidebar .messages .contact-details{
-          width:33.3vw !important
-      }
-      . .sidebar-toggle .main-nav.on ~ .show-recent ~ .chitchat-main.small-sidebar .messages .contact-details ul li{
-          padding-left:9px
-      }
-      . .sidebar-toggle .main-nav.on ~ .show-recent ~ .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 590px)
-      }
-      . .sidebar-toggle .main-nav ~ .show-recent ~ .chitchat-main.small-sidebar .messages .contact-details{
-          width:44vw
-      }
-      . .sidebar-toggle .main-nav ~ .show-recent ~ .chitchat-main.small-sidebar .messages .contact-details ul li{
-          padding-left:24px
-      }
-      . .sidebar-toggle .main-nav ~ .show-recent ~ .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 500px)
-      }
-      . .chitchat-container .chitchat-main.small-sidebar{
-          width:calc(100% - 92px)
-      }
-      . .chitchat-container .chitchat-main.small-sidebar .contact-details{
-          width:84vw
-      }
+
       .sidebar-toggle .main-nav.on ~ .show-recent ~ .chitchat-main .messages .contact-details{
           width:42.5vw !important
       }
@@ -14547,24 +14479,8 @@
       .chitchat-main .messages .contact-details ul li{
           padding-left:30px
       }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .messages .contact-details{
-          width:66.3vw !important
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .messages .contact-details ul li{
-          padding-left:33px
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 200px)
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main .messages .contact-details ul li{
-          padding-left:24px
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main .messages .contact-details ul li{
-          padding-left:28px
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main.small-sidebar .messages .contact-details ul li{
-          padding-left:10px
-      }
+      
+     
       .contact-details .media-right ul{
           display:-webkit-box;
           display:-ms-flexbox;
@@ -14624,24 +14540,7 @@
       .chitchat-main .messages .contact-details ul li{
           padding-left:30px
       }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .messages .contact-details{
-          width:66.3vw !important
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .messages .contact-details ul li{
-          padding-left:33px
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 200px)
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main .messages .contact-details ul li{
-          padding-left:24px
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main .messages .contact-details ul li{
-          padding-left:28px
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main.small-sidebar .messages .contact-details ul li{
-          padding-left:10px
-      }
+      
       .contact-details .media-right ul{
           display:-webkit-box;
           display:-ms-flexbox;
@@ -14776,19 +14675,6 @@
           height:60px;
           width:60px
       }
-  
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details{
-          width:57.3vw !important
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details ul li{
-          padding-left:30px
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main .messages .contact-details{
-          width:74vw
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main .messages .contact-details ul li{
-          padding-left:20px
-      }
       .chitchat-main .message-input{
           height:60px;
           padding:14px 20px
@@ -14868,7 +14754,7 @@
           position:absolute;
           left:0;
           z-index:9999 !important;
-          background-color:#fff
+          background-color:red
       }
       .chitchat-container .main-nav.on ~ .chitchat-left-sidebar .recent-default{
           width:100vw;
@@ -14914,15 +14800,6 @@
       }
       .theme-landing header .landing-header .navbar-collapse .navbar-nav .nav-item{
           margin-bottom:15px
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details{
-          width:55.3vw !important
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details ul li{
-          padding-left:24px
-      }
-      . .sidebar-toggle .main-nav .chitchat-main .messages .contact-details ul li{
-          padding-left:11px
       }
       .chitchat-main .messages .contact-details{
           width:88vw
@@ -15180,18 +15057,6 @@
       .toggle-sticker{
           display:none
       }
-      . .chitchat-container .chitchat-main.small-sidebar{
-          width:calc(100% - 1px)
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .contact-details{
-          width:89.3vw !important
-      }
-      . .sidebar-toggle .main-nav.on ~ .chitchat-main.small-sidebar .message-input{
-          width:calc(100% - 5px)
-      }
-      . .sidebar-toggle .main-nav ~ .chitchat-main .messages .contact-details{
-          width:68vw
-      }
       .sidebar-toggle .main-nav.on ~ .chitchat-main .contact-details{
           width:65.5vw !important
       }
@@ -15305,36 +15170,7 @@
       .subscribe-content .form-inline .form-control:first-child{
           margin-right:0px
       }
-      .img-10{
-          width:2px !important
-      }
-      .img-20{
-          width:4px !important
-      }
-      .img-30{
-          width:5px !important
-      }
-      .img-40{
-          width:7px !important
-      }
-      .img-50{
-          width:9px !important
-      }
-      .img-60{
-          width:15px !important
-      }
-      .img-70{
-          width:25px !important
-      }
-      .img-80{
-          width:35px !important
-      }
-      .img-90{
-          width:45px !important
-      }
-      .img-100{
-          width:55px !important
-      }
+
       .nav-tabs .nav-item{
           margin-right:5px
       }
@@ -15362,5 +15198,4 @@
           padding:0.75rem 0.25rem
       }
   }
-  /*# sourceMappingURL=style.css.map */
 }

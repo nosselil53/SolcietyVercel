@@ -1,6 +1,4 @@
-import { useState } from "react";
 import {X} from "react-feather"
-
 
 const ContactListSection = (props) => {
 	const closeLeftSide = () => {
@@ -8,6 +6,7 @@ const ContactListSection = (props) => {
 		document.querySelector(".recent-default").classList.add("active");
 		props.ActiveTab("");
 	};
+	
 	return (
 		<div
 			className={`contact-list-tab dynemic-sidebar custom-scroll ${
@@ -20,7 +19,6 @@ const ContactListSection = (props) => {
 					<div>
 						<h2>Contact</h2>
 						<h4>Start talking now</h4>
-						
 					</div>
 					<div className='media-body text-right'>
             {' '}
@@ -32,7 +30,7 @@ const ContactListSection = (props) => {
               <X />
             </a>
           </div>
-					</div>
+		</div>
 		</div>
 		</div>
 	);

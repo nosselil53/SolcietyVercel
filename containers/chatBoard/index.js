@@ -1,19 +1,9 @@
-
 import Chat from './chat'
 
-
-
 const ChitChat = () => {
-
-  
-   
-
-
     return (
-        <div className="chitchat-main small-sidebar" id="content">
-            <Chat  />
-          
-        
+        <div className="chitchat-main " id="content">
+            <Chat />
         </div>
     );
 }

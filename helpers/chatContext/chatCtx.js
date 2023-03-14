@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Context from './index';
 const ChatProvider = (props) => {
   const [toggleSmallSide, setToggleSmallSide] = useState(false);
@@ -6,14 +6,9 @@ const ChatProvider = (props) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [chatMembers, setChatMembers] = useState([]);
   const [chats, setChats] = useState([]);
-  const currentUserId = 0;
+  //l'affichage des messages des utilisateur 
   const [selectedUser, setSelectedUser] = useState({
-    id: 0,
-    name: 'Jony Lynetin',
-    thumb: 'contact/2.jpg',
-    status: '8',
-    mesg: 'Typing................',
-    lastSeenDate: '30/11/19',
+  //statu online pour les utilisateur 
     onlineStatus: 'online',
     typing: true,
   });
@@ -55,7 +50,8 @@ const ChatProvider = (props) => {
   const replyMessage = (currentUserId, selectedUserId, replyMessage, chats) => {
     let chat = chats.find(
       (x) => x.users.includes(currentUserId) && x.users.includes(selectedUserId)
-    ); // find selected chat User Id
+    );
+    // find selected chat User Id
     const now = new Date();
     const time = now.getHours() + ':' + now.getMinutes();
     if (chat) {

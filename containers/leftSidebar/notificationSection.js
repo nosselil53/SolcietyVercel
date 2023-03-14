@@ -14,8 +14,8 @@ const NotificationSection = (props) => {
                   <h4>List of notification</h4>
                 </div>
                 <div className='media-body text-right'>
-            {' '}
-            <a
+               {' '}
+              <a
               className='icon-btn btn-outline-light btn-sm close-panel'
               href='#'
               onClick={() => closeLeftSide()}

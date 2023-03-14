@@ -1,5 +1,10 @@
 import { X } from "react-feather"
 const StatusSection = (props) => {
+	const closeLeftSide = () => {
+    document.querySelector(".notification-tab").classList.remove("active")
+    document.querySelector(".recent-default").classList.add("active");
+    props.ActiveTab("")
+    }
 
     return (
         <div className={`status-tab custom-scroll dynemic-sidebar ${props.tab === "status" ? "active" : ""}`} id="status">
@@ -13,9 +18,21 @@ const StatusSection = (props) => {
                     </div>
                   </div>
                   <div className="media-body">
+                    
                     <h3>my status</h3>
                     <p>tap to add status Update</p>
+                    
                   </div>
+                  <div className='media-body text-right'>
+               {' '}
+              <a
+              className='icon-btn btn-outline-light btn-sm close-panel'
+              href='#'
+              onClick={() => closeLeftSide()}
+            >
+              <X />
+            </a>
+          </div>
          
                 </div>
               </div>

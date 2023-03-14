@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect} from "react";
 import FevoriteSection from "./fevoriteSection";
 import DocumentSection from "./documentSection";
 import ContactListSection from "./contactListSection";
@@ -9,47 +9,16 @@ import RecentSection from "./recentSection";
 import ChatSection from "./chatSection";
 import { Fragment, useState } from "react";
 import { NavLink, TabContent, TabPane } from "reactstrap";
-
-import { useRouter } from "next/router";
 import { Tooltip } from "react-tippy";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { getPageFiles } from "next/dist/next-server/server/get-page-files";
 
-const steps = [
-	{
-		selector: ".step1",
-		content: "Check Status here",
-	},
-	{
-		selector: ".step2",
-		content: "You can change settings by clicking here",
-	},
-	{
-		selector: ".step3",
-		content: "Change mode",
-	},
-	{
-		selector: ".step4",
-		content: "Start chat",
-	},
-];
-
-const Index = (props) => {
+const Index = () => {
 	const width = useWindowSize();
-	const [opentour, setopentour] = useState(true);
 	const [activeTab, setActiveTab] = useState("");
-	const [mode, setMode] = useState(false);
-	const router = useRouter();
-
-	useEffect(() => {
-		if (localStorage.getItem("layout_mode") === "dark") {
-			setMode(true);
-		}
-	}, []);
 
 	function useWindowSize() {
 		const [size, setSize] = useState([0, 0]);
-		useLayoutEffect(() => {
+		useEffect(() => {
 			function updateSize() {
 				setSize(window.innerWidth);
 			}
@@ -68,27 +37,6 @@ const Index = (props) => {
 		}
 	};
 
-	const closeTour = () => {
-		setopentour(false);
-	};
-
-	const toggleLightMode = (modes) => {
-		if (modes) {
-			setMode(!modes);
-			document.body.className += " main-page";
-			localStorage.setItem("layout_mode", "");
-		} else {
-			setMode(!modes);
-			document.body.className += " main-page dark";
-			localStorage.setItem("layout_mode", "dark");
-		}
-	};
-
-	const firebaseLogout = async () => {
-		//firebase.auth().signOut();
-		router.push("/auth/signIn");
-	};
-
 	return (
 		<Fragment>
 			<nav className="main-nav on custom-scroll">
@@ -100,7 +48,6 @@ const Index = (props) => {
 					>
 						<img src="/assets/images/logo/logo.png" alt="logo" />
 					</a>
-				
 				</div>
 
 				{/* list section */}
@@ -117,7 +64,7 @@ const Index = (props) => {
 										<div
 											className="bg-size"
 											style={{
-												backgroundImage: `url("/assets/images/avtar/2.jpg")`,
+												backgroundImage: `url("/assets/images/avtar/1.jpg")`,
 												backgroundSize: "cover",
 												backgroundPosition: "center",
 												display: "block",
@@ -143,7 +90,7 @@ const Index = (props) => {
 									onClick={() => TogglTab("fevorite")}
 								>
 									<i className="fa fa-star"></i>
-									<FontAwesomeIcon icon="fa-light fa-star" />
+								 
 
 								</NavLink>
 							</Tooltip>
@@ -210,30 +157,10 @@ const Index = (props) => {
 					</ul>
 					<ul className="sidebar-bottom">
 						<li>
-							<Tooltip
-								title="Change Mode"
-								size="small"
-								position="top-end"
-								trigger="mouseenter"
-							>
-								<NavLink
-									className="icon-btn btn-light button-effect mode step3"
-									data-intro="Change mode"
-									onClick={() => toggleLightMode(mode)}
-								>
-									<i
-										className={mode ? "fa fa-lightbulb-o" : "fa fa-moon-o"}
-									></i>
-								</NavLink>
-							</Tooltip>
-						</li>
-						<li>
 							<Tooltip title="SignOut" position="top" trigger="mouseenter">
 								<NavLink
 									className="icon-btn btn-light"
-									onClick={() => firebaseLogout()}
 								>
-									{" "}
 									<i className="fa fa-power-off"> </i>
 								</NavLink>
 							</Tooltip>

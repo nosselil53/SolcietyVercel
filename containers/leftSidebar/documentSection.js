@@ -1,6 +1,5 @@
 import {X} from "react-feather"
 
-
 const DocumentSection = (props) => {
   const closeLeftSide = () => {
     document.querySelector('.document-tab').classList.remove('active');

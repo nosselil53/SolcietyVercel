@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import LeftSide from "../../containers/leftSidebar";
 import Chitchat from "../../containers/chatBoard";
+//import { create } from 'ipfs-core'
 
 import ThemeCustomizer from "../../containers/themeCustomizer";
 

@@ -1,40 +1,35 @@
 import { useContext, useEffect, useState, useRef } from 'react';
 import { io } from "socket.io-client"
-const socket = io("https://socket-server-sol.onrender.com", { transports: ['websocket'] })
+const socket = io("https://socket-server-sol.onrender.com",{transports: ['websocket']})
 
 import {
   Button,
   Dropdown,
-  DropdownItem,
-  DropdownMenu,
   DropdownToggle,
   Modal,
   ModalBody,
   ModalHeader,
 } from 'reactstrap';
 import {
-
   Phone,
   Video,
-
   Trash2,
   Slash,
   MoreVertical,
-
+  box,
+  
   Send,
 } from 'react-feather';
 import ChatContext from '../../helpers/chatContext';
 import { Tooltip } from 'react-tippy';
 
-
 const CustomChat = (props) => {
   const [volum, setVolum] = useState(true);
   const [search, setSearch] = useState(false);
   const [audiocall, setAudiocall] = useState(false);
-  const [audioreceivecall, setAudioreceivecall] = useState(false);
   const [videocall, setVideocall] = useState(false);
   const [videoscreen, setVideoScreen] = useState(false);
-
+ 
   const chatCtx = useContext(ChatContext);
   const [deleteModal, setDeleteModal] = useState(false);
   const [blockModal, setBlockModal] = useState(false);
@@ -46,59 +41,27 @@ const CustomChat = (props) => {
   const selectedUser = chatCtx.selectedUser;
   const isTyeping = chatCtx.isTyeping;
   const typingMessage = chatCtx.typingMessage;
-
+  
   const toggleAudiocall = () => {
     setAudiocall(!audiocall);
   };
   const toggleVideocall = () => {
     setVideocall(!videocall);
   };
-  const toggleAudioReceiveCall = () => {
-    setAudioreceivecall(!audioreceivecall);
-  };
 
-  const AudioReceiveCall = async () => {
-    setAudioreceivecall(true);
-    setAudiocall(false);
-  };
+ 
   //soket.io
-  const [chat, setChat] = useState("")
-
-  const [list, setList] = useState([])
-  const handlepost = (e) => {
-
-
-    socket.emit("roomstatus", { id: socket.id, chatText: chat })
+   const[chat, setChat] =useState("")
+  
+  const[list, setList] =useState([])
+  const handlepost =(e) =>{
+    
+   
+    socket.emit("roomstatus", {id :socket.id, chatText : chat})
   }
-  socket.on("send", (data) => {
-    setList([...list, data])
+  socket.on("send",(data)=>{
+    setList([...list,data])
   })
-
-  const profileSideBarToggle = (toggle) => {
-    if (toggle) {
-      document.body.className = ` main-page menu-active ${localStorage.getItem(
-        'layout_mode'
-      )}`;
-      // document
-      //   .querySelector('.chitchat-main')
-      //   .classList.remove('small-sidebar');
-      document.querySelector('.chitchat-main').classList.add('small-sidebar');
-
-      setProfileToggle(toggle);
-      props.setQuickAction(false);
-    } else {
-      document.body.className = ` main-page ${localStorage.getItem(
-        'layout_mode'
-      )}`;
-      document.querySelector('.chitchat-main').classList.add('small-sidebar');
-
-      setProfileToggle(toggle);
-    }
-  };
-
-  const refreshCw = (e) => {
-    e.currentTarget.classList.toggle('refreshed');
-  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -109,7 +72,7 @@ const CustomChat = (props) => {
 
   return chatMembers && chats && selectedUser ? (
     <>
-      <div className='messages custom-scroll active wallpapers' id='chating'>
+      <div    className='messages custom-scroll active wallpapers' id='chating'>
         <div className='contact-details'>
           <div className='row'>
             <form className={`form-inline search-form ${search ? 'open' : ''}`}>
@@ -129,7 +92,7 @@ const CustomChat = (props) => {
               <div className='media left'>
                 <div
                   className='media-left mr-3'
-
+                
                 >
                   <div
                     className={`profile menu-trigger ${selectedUser.onlineStatus}`}
@@ -138,11 +101,13 @@ const CustomChat = (props) => {
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       display: 'block',
+                     
+                      
                     }}
                   ></div>
                 </div>
                 <div className='media-body'>
-                  <h6>{sk} </h6>
+                <h3 className='roomtitle' >Global chat </h3>
                   <div
                     className={`badge ${selectedUser.onlineStatus === 'online'
                       ? 'badge-success'
@@ -153,25 +118,12 @@ const CustomChat = (props) => {
                       ? '256 Active users'
                       : 'InActive'}
                   </div>
+                 
                 </div>
                 <div className='media-right'>
                   <ul>
-                    <li>
-                      <a
-                        className='icon-btn btn-light button-effect mute'
-                        href='#'
-                        onClick={() => setVolum(!volum)}
-                      >
-                        {volum ? <span className='effect-wave'></span> : ''}
-                        <i
-                          className={`fa fa-volume-up ${volum ? '' : 'off'}`}
-                        ></i>
-                      </a>
-                    </li>
-
-                    <li>
-
-                    </li>
+                    <h5>connnected as</h5>
+                  <h6>{sk} </h6>
                   </ul>
                 </div>
               </div>
@@ -180,7 +132,7 @@ const CustomChat = (props) => {
               <ul className='calls text-right'>
                 <li>
                   <Tooltip
-                    title='Quick Audio Call'
+                    title='Community gallery'
                     position='bottom-end'
                     trigger='mouseenter'
                   >
@@ -189,16 +141,22 @@ const CustomChat = (props) => {
                       href='#'
                       onClick={() => setAudiocall(!audiocall)}
                     >
-                      <Phone />
+                     <i class="fa-solid fa-palette"></i>
                     </a>
                   </Tooltip>
-
                   <Modal
                     className='show'
                     isOpen={audiocall}
                     toggle={toggleAudiocall}
                     centered={true}
-                    data-backdrop="false"
+                  >
+                
+                  </Modal>
+                  <Modal
+                    className='show'
+                    isOpen={audiocall}
+                    toggle={toggleAudiocall}
+                    centered={true}
                   >
                     <ModalBody className='p-0'
                      onClick={()=>location.href = "http://www.google.com"}>
@@ -249,7 +207,7 @@ const CustomChat = (props) => {
                 </li>
                 <li>
                   <Tooltip
-                    title='Quick Video Call'
+                    title='On going vote'
                     position='bottom-end'
                     trigger='mouseenter'
                   >
@@ -258,8 +216,7 @@ const CustomChat = (props) => {
                       href='#'
                       onClick={() => setVideocall(!videocall)}
                     >
-                      <Video />
-                    </a>
+<i class="fa-solid fa-gavel"></i>                    </a>
                   </Tooltip>
                   <Modal
                     className={`viddiolog fade show ${videoscreen ? 'active' : ''
@@ -269,7 +226,7 @@ const CustomChat = (props) => {
                     centered={true}
                   >
                     <ModalBody>
-
+                    
                       <div
                         className='videocall call-modal '
                         style={{
@@ -279,15 +236,11 @@ const CustomChat = (props) => {
                           display: 'block',
                         }}
                       >
-
-
-
-
-                      </div>
+                   </div>
                     </ModalBody>
                   </Modal>
                 </li>
-
+            
                 <li className='chat-friend-toggle'>
                   <Dropdown
                     isOpen={props.quickAction}
@@ -316,7 +269,7 @@ const CustomChat = (props) => {
                       }
                     >
                       <ul>
-
+                       
                         <li>
                           <a
                             className='icon-btn btn-outline-danger button-effect btn-sm'
@@ -327,7 +280,7 @@ const CustomChat = (props) => {
                           </a>
                           <h5 onClick={() => setDeleteModal(!deleteModal)}>
                             Donate
-                          </h5>
+                        </h5>
                         </li>
                         <li>
                           <a
@@ -339,7 +292,7 @@ const CustomChat = (props) => {
                           </a>
                           <h5 onClick={() => setBlockModal(!blockModal)}>
                             Block
-                          </h5>
+                        </h5>
                         </li>
                       </ul>
                     </div>
@@ -349,7 +302,6 @@ const CustomChat = (props) => {
             </div>
           </div>
         </div>
-
         <Modal
           isOpen={blockModal}
           className='add-popup delete-modal'
@@ -367,7 +319,7 @@ const CustomChat = (props) => {
                 onClick={() => setBlockModal(!blockModal)}
               >
                 Block
-              </Button>
+            </Button>
               <Button
                 className='button-effect ml-2'
                 size='sm'
@@ -375,134 +327,116 @@ const CustomChat = (props) => {
                 onClick={() => setBlockModal(!blockModal)}
               >
                 Close
-              </Button>
+            </Button>
             </div>
           </ModalBody>
         </Modal>
         <div className='contact-chat'>
           <ul className='chatappend'>
-
-            <>
-
-              {list.map(function (p) {
-                if (p.id === sk) {
-                  return (
-                    <li className='replies'>
-                      <div className='media'>
-                        <div
-                          className='profile mr-4'
-                          style={{
-                            backgroundImage: `url('assets/images/avtar/1.jpg')`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            display: 'block',
-                          }}
-                        >
-                          <img
-                            className='bg-img'
-                            src='/assets/images/avtar/1.jpg'
-                            alt='Avatar'
-                            style={{ display: 'none' }}
-                          />
-                        </div>
-                        <div className='media-body'>
-                          <div className='contact-name'>
-                            <h5>{p.id}</h5>
-
-                            <ul className='msg-box'>
-                              <li className='msg-setting-main'>
-                                <h5>{p.chatText}</h5>
-                              </li>
-
-                            </ul>
+              <>      
+             {list.map(function(p){
+             if (p.id === sk) {
+              return(
+                <li className='replies'>
+                        <div className='media'>
+                          <div
+                            className='profile mr-4'
+                            style={{
+                              backgroundImage: `url('assets/images/avtar/1.jpg')`,
+                              backgroundSize: 'cover',
+                              backgroundPosition: 'center',
+                              display: 'block',
+                            }}
+                          >
+                            <img
+                              className='bg-img'
+                              src='/assets/images/avtar/1.jpg'
+                              alt='Avatar'
+                              style={{ display: 'none' }}
+                            />
+                          </div>
+                          <div className='media-body'>
+                            <div className='contact-name'>
+                              <h5>{p.id}</h5>
+                              
+                              <ul className='msg-box'>
+                                <li className='msg-setting-main'>
+                                  <h5>{p.chatText}</h5>
+                                </li>
+                               
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </li>
+              )
+            }
+            else{
+            return(
+              <li className='sent'>
+            <div className='media'>
+              <div
+                className='profile mr-4'
+                style={{
+                  backgroundImage: `url('/assets/images/avtar/3.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  display: 'block',
+                }}
+              >
+                <img
+                  className='bg-img'
+                  src='/assets/images/avtar/3.jpg'
+                  alt='Avatar'
+                  style={{ display: 'none' }}
+                />
+              </div>
+              <div className='media-body'>
+                <div className='contact-name'>
+                  <h5>{p.id}</h5>
+                  
+                  <ul className='msg-box'>
+                    <li className='msg-setting-main'>
+                      <h5>{p.chatText}</h5>
                     </li>
-                  )
-
-                }
-
-
-                else {
-                  return (
-                    <li className='sent'>
-                      <div className='media'>
-                        <div
-                          className='profile mr-4'
-                          style={{
-                            backgroundImage: `url('/assets/images/avtar/3.jpg')`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            display: 'block',
-                          }}
-                        >
-                          <img
-                            className='bg-img'
-                            src='/assets/images/avtar/3.jpg'
-                            alt='Avatar'
-                            style={{ display: 'none' }}
-                          />
-                        </div>
-                        <div className='media-body'>
-                          <div className='contact-name'>
-                            <h5>{p.id}</h5>
-
-                            <ul className='msg-box'>
-                              <li className='msg-setting-main'>
-                                <h5>{p.chatText}</h5>
-                              </li>
-                              <li className='msg-setting-main'>
-
-
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                    <li className='msg-setting-main'>
                     </li>
-                  )
-                }
-
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+            )
+             }
+       
               }
               )}
-
-
-            </>
-
-
-
-
+              </>
           </ul>
         </div>
+        <div className='message-input'>
+      <div className='wrap emojis-main'>
+        <input
+          className='setemoj'
+          id="chatin"
+          type='text'
+          placeholder='Write your message  ...'
+          onChange={(c)=> setChat(c.target.value)}
+        />
+        <button
+          className={`submit icon-btn btn-primary $`}
+          onClick={handlepost}
+        >
+          <Send />
+        </button>
       </div>
-      <div className='message-input'>
-        <div className='wrap emojis-main'>
-
-
-
-          <input
-            className='setemoj'
-            id="chatinn"
-            type='text'
-            placeholder='Write your message...'
-
-            onChange={(c) => setChat(c.target.value)}
-          />
-
-
-          <button
-            className={`submit icon-btn btn-primary $`}
-            onClick={handlepost}
-          >
-            <Send />
-          </button>
-        </div>
+    </div>
       </div>
+      
     </>
   ) : (
-    ''
-  );
+      ''
+    );
 };
 
 export default CustomChat;
