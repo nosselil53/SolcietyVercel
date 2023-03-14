@@ -186,19 +186,7 @@ const CustomChat = (props) => {
                               <br />
                               <div className='title2'>Community Gallery</div>
                               <h6>Contact us to be featured</h6>
-                              <ul>
-                                <li>
-                                  <a
-                                    className="icon-btn btn-outline-light button-effect btn-xl "
-                                    href="https://nosselil53.github.io/Solciety-community-gallery/"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#audiorcvcall"
-                                    data-bs-dismiss="modal"
-                                  >
-                                    <i className="fa-solid fa-arrow-up-right-from-square" />
-                                  </a>
-                                </li>
-                              </ul>
+                             
                             </div>
                           </div>
 
