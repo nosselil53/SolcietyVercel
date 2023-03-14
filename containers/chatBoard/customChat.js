@@ -417,6 +417,7 @@ const CustomChat = (props) => {
         <div className='message-input'>
       <div className='wrap emojis-main'>
         <input
+        autoComplete="off"
           className='setemoj'
           id="chatin"
           type='text'
