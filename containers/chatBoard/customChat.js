@@ -58,6 +58,8 @@ const CustomChat = (props) => {
     
    
     socket.emit("roomstatus", {id :socket.id, chatText : chat})
+        setChat('');
+
   }
   socket.on("send",(data)=>{
     setList([...list,data])
@@ -416,12 +418,13 @@ const CustomChat = (props) => {
         </div>
         <div className='message-input'>
       <div className='wrap emojis-main'>
-       <input
+        <input
   autoComplete="off"
   className='setemoj'
   id="chatin"
   type='text'
   placeholder='Write your message  ...'
+  value={chat}
   onChange={(c)=> setChat(c.target.value)}
   onKeyDown={(event) => {
     if (event.key === 'Enter') {
