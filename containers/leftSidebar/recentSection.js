@@ -41,28 +41,7 @@ const RecentSection = () => {
           />
         </div>
       </div>
-					<div className="media-body">
-						<a
-							className={`icon-btn button-effect pull-right mobile-back  ${
-								sidebarToggle ? "btn-outline-primary" : "btn-outline-light"
-							}`}
-							href="#"
-						>
-							<i
-								className="ti-angle-right"
-								onClick={() => hangleRightClick()}
-							></i>
-						</a>
-						<a
-							className={`icon-btn button-effect pull-right mainnav  ${
-								sidebarToggle ? "btn-outline-primary" : "btn-outline-light"
-							}`}
-							href="#"
-							onClick={() => OpenCloseSidebar(sidebarToggle)}
-						>
-							<i className="ti-layout-grid2"></i>
-						</a>
-					</div>
+					
 				</div>
 			</div>
 			<SliderSection />
