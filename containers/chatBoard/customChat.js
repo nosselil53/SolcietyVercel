@@ -159,7 +159,7 @@ const CustomChat = (props) => {
                     centered={true}
                   >
                     <ModalBody className='p-0'
-                     onClick={()=>location.href = "http://www.google.com"}>
+                     onClick={()=>location.href = "https://nosselil53.github.io/Solciety-community-gallery/"}>
 
                       <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-body">
