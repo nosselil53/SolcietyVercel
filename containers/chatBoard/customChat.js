@@ -416,18 +416,24 @@ const CustomChat = (props) => {
         </div>
         <div className='message-input'>
       <div className='wrap emojis-main'>
-        <input
-        autoComplete="off"
-          className='setemoj'
-          id="chatin"
-          type='text'
-          placeholder='Write your message  ...'
-          onChange={(c)=> setChat(c.target.value)}
-        />
-        <button
-          className={`submit icon-btn btn-primary $`}
-          onClick={handlepost}
-        >
+       <input
+  autoComplete="off"
+  className='setemoj'
+  id="chatin"
+  type='text'
+  placeholder='Write your message  ...'
+  onChange={(c)=> setChat(c.target.value)}
+  onKeyDown={(event) => {
+    if (event.key === 'Enter') {
+      handlepost();
+    }
+  }}
+/>
+<button
+  className={`submit icon-btn btn-primary`}
+  onClick={handlepost}
+>
+
           <Send />
         </button>
       </div>
