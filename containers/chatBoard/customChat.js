@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, useRef } from 'react';
 import { io } from "socket.io-client"
-const socket = io("https://socket-server-sol.onrender.com",{transports: ['websocket']})
+const socket = io("https://socket-server-sol.onrender.com", { transports: ['websocket'] })
 
 import {
   Button,
@@ -20,7 +20,7 @@ import {
   Trash2,
   Slash,
   MoreVertical,
-  
+
   Send,
 } from 'react-feather';
 import ChatContext from '../../helpers/chatContext';
@@ -34,7 +34,7 @@ const CustomChat = (props) => {
   const [audioreceivecall, setAudioreceivecall] = useState(false);
   const [videocall, setVideocall] = useState(false);
   const [videoscreen, setVideoScreen] = useState(false);
- 
+
   const chatCtx = useContext(ChatContext);
   const [deleteModal, setDeleteModal] = useState(false);
   const [blockModal, setBlockModal] = useState(false);
@@ -46,7 +46,7 @@ const CustomChat = (props) => {
   const selectedUser = chatCtx.selectedUser;
   const isTyeping = chatCtx.isTyeping;
   const typingMessage = chatCtx.typingMessage;
-  
+
   const toggleAudiocall = () => {
     setAudiocall(!audiocall);
   };
@@ -62,16 +62,16 @@ const CustomChat = (props) => {
     setAudiocall(false);
   };
   //soket.io
-   const[chat, setChat] =useState("")
-  
-  const[list, setList] =useState([])
-  const handlepost =(e) =>{
-    
-   
-    socket.emit("roomstatus", {id :socket.id, chatText : chat})
+  const [chat, setChat] = useState("")
+
+  const [list, setList] = useState([])
+  const handlepost = (e) => {
+
+
+    socket.emit("roomstatus", { id: socket.id, chatText: chat })
   }
-  socket.on("send",(data)=>{
-    setList([...list,data])
+  socket.on("send", (data) => {
+    setList([...list, data])
   })
 
   const profileSideBarToggle = (toggle) => {
@@ -83,7 +83,7 @@ const CustomChat = (props) => {
       //   .querySelector('.chitchat-main')
       //   .classList.remove('small-sidebar');
       document.querySelector('.chitchat-main').classList.add('small-sidebar');
-  
+
       setProfileToggle(toggle);
       props.setQuickAction(false);
     } else {
@@ -91,7 +91,7 @@ const CustomChat = (props) => {
         'layout_mode'
       )}`;
       document.querySelector('.chitchat-main').classList.add('small-sidebar');
-     
+
       setProfileToggle(toggle);
     }
   };
@@ -109,7 +109,7 @@ const CustomChat = (props) => {
 
   return chatMembers && chats && selectedUser ? (
     <>
-      <div    className='messages custom-scroll active wallpapers' id='chating'>
+      <div className='messages custom-scroll active wallpapers' id='chating'>
         <div className='contact-details'>
           <div className='row'>
             <form className={`form-inline search-form ${search ? 'open' : ''}`}>
@@ -129,7 +129,7 @@ const CustomChat = (props) => {
               <div className='media left'>
                 <div
                   className='media-left mr-3'
-                
+
                 >
                   <div
                     className={`profile menu-trigger ${selectedUser.onlineStatus}`}
@@ -168,9 +168,9 @@ const CustomChat = (props) => {
                         ></i>
                       </a>
                     </li>
-                 
+
                     <li>
-                     
+
                     </li>
                   </ul>
                 </div>
@@ -192,62 +192,57 @@ const CustomChat = (props) => {
                       <Phone />
                     </a>
                   </Tooltip>
-                  <Modal
-                    className='show'
-                    isOpen={audiocall}
-                    toggle={toggleAudiocall}
-                    centered={true}
-                  >
-                
-                  </Modal>
-                  <Modal
-                    className='show'
-                    isOpen={audiocall}
-                    toggle={toggleAudiocall}
-                    centered={true}
-                  >
-                    <ModalBody className='p-0'>
 
-  <div className="modal-dialog modal-dialog-centered" role="document">
-    <div className="modal-body">
-                      <div
-                        className='audiocall1 call-modal backgallery'
-                        style={{
-                          backgroundImage: `url('../assets/images/avtar/big/audiocall.png')`,
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center',
-                          display: 'block',
-                        }}
-                      >
-                        <img
-                          className='bg-img'
-                          src='../assets/images/avtar/big/audiocall.png'
-                          alt='Avatar'
-                          style={{ display: 'none' }}
-                        />
-                        <div className='center-con1 text-center'>
-                        <br />
-                        <br /> 
-                        <br />
-                          <div className='title2'>Community Gallery</div>
-                          <h6>Contact us to be featured</h6>
-                          <ul>
-            <li>
-              <a
-                className="icon-btn btn-outline-light button-effect btn-xl "
-                href="https://www.google.com/"
-                data-bs-toggle="modal"
-                data-bs-target="#audiorcvcall"
-                data-bs-dismiss="modal"
-              >
-                <i className="fa-solid fa-arrow-up-right-from-square" />
-              </a>
-            </li>
-          </ul>
+                  <Modal
+                    className='show'
+                    isOpen={audiocall}
+                    toggle={toggleAudiocall}
+                    centered={true}
+                    data-backdrop="false"
+                  >
+                    <ModalBody className='p-0'
+                     onClick={()=>location.href = "http://www.google.com"}>
+
+                      <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-body">
+                          <div
+                            className='audiocall1 call-modal backgallery'
+                            style={{
+                              backgroundImage: `url('../assets/images/avtar/big/audiocall.png')`,
+                              backgroundSize: 'cover',
+                              backgroundPosition: 'center',
+                              display: 'block',
+                            }}
+                          >
+                            <img
+                              className='bg-img'
+                              src='../assets/images/avtar/big/audiocall.png'
+                              alt='Avatar'
+                              style={{ display: 'none' }}
+                            />
+                            <div className='center-con1 text-center'>
+                              <br />
+                              <br />
+                              <br />
+                              <div className='title2'>Community Gallery</div>
+                              <h6>Contact us to be featured</h6>
+                              <ul>
+                                <li>
+                                  <a
+                                    className="icon-btn btn-outline-light button-effect btn-xl "
+                                    href="https://www.google.com/"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#audiorcvcall"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    <i className="fa-solid fa-arrow-up-right-from-square" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
                         </div>
-                      </div>
-                     
-                      </div>
                       </div>
                     </ModalBody>
                   </Modal>
@@ -274,7 +269,7 @@ const CustomChat = (props) => {
                     centered={true}
                   >
                     <ModalBody>
-                    
+
                       <div
                         className='videocall call-modal '
                         style={{
@@ -284,15 +279,15 @@ const CustomChat = (props) => {
                           display: 'block',
                         }}
                       >
-                       
-                        
-              
-                  
+
+
+
+
                       </div>
                     </ModalBody>
                   </Modal>
                 </li>
-            
+
                 <li className='chat-friend-toggle'>
                   <Dropdown
                     isOpen={props.quickAction}
@@ -321,7 +316,7 @@ const CustomChat = (props) => {
                       }
                     >
                       <ul>
-                       
+
                         <li>
                           <a
                             className='icon-btn btn-outline-danger button-effect btn-sm'
@@ -332,7 +327,7 @@ const CustomChat = (props) => {
                           </a>
                           <h5 onClick={() => setDeleteModal(!deleteModal)}>
                             Donate
-                        </h5>
+                          </h5>
                         </li>
                         <li>
                           <a
@@ -344,7 +339,7 @@ const CustomChat = (props) => {
                           </a>
                           <h5 onClick={() => setBlockModal(!blockModal)}>
                             Block
-                        </h5>
+                          </h5>
                         </li>
                       </ul>
                     </div>
@@ -354,7 +349,7 @@ const CustomChat = (props) => {
             </div>
           </div>
         </div>
-       
+
         <Modal
           isOpen={blockModal}
           className='add-popup delete-modal'
@@ -372,7 +367,7 @@ const CustomChat = (props) => {
                 onClick={() => setBlockModal(!blockModal)}
               >
                 Block
-            </Button>
+              </Button>
               <Button
                 className='button-effect ml-2'
                 size='sm'
@@ -380,134 +375,134 @@ const CustomChat = (props) => {
                 onClick={() => setBlockModal(!blockModal)}
               >
                 Close
-            </Button>
+              </Button>
             </div>
           </ModalBody>
         </Modal>
         <div className='contact-chat'>
           <ul className='chatappend'>
-            
-              <>
-              
-      {list.map(function(p){
-             if (p.id === sk) {
-              return(
-                <li className='replies'>
-                        <div className='media'>
-                          <div
-                            className='profile mr-4'
-                            style={{
-                              backgroundImage: `url('assets/images/avtar/1.jpg')`,
-                              backgroundSize: 'cover',
-                              backgroundPosition: 'center',
-                              display: 'block',
-                            }}
-                          >
-                            <img
-                              className='bg-img'
-                              src='/assets/images/avtar/1.jpg'
-                              alt='Avatar'
-                              style={{ display: 'none' }}
-                            />
-                          </div>
-                          <div className='media-body'>
-                            <div className='contact-name'>
-                              <h5>{p.id}</h5>
-                              
-                              <ul className='msg-box'>
-                                <li className='msg-setting-main'>
-                                  <h5>{p.chatText}</h5>
-                                </li>
-                               
-                              </ul>
-                            </div>
+
+            <>
+
+              {list.map(function (p) {
+                if (p.id === sk) {
+                  return (
+                    <li className='replies'>
+                      <div className='media'>
+                        <div
+                          className='profile mr-4'
+                          style={{
+                            backgroundImage: `url('assets/images/avtar/1.jpg')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            display: 'block',
+                          }}
+                        >
+                          <img
+                            className='bg-img'
+                            src='/assets/images/avtar/1.jpg'
+                            alt='Avatar'
+                            style={{ display: 'none' }}
+                          />
+                        </div>
+                        <div className='media-body'>
+                          <div className='contact-name'>
+                            <h5>{p.id}</h5>
+
+                            <ul className='msg-box'>
+                              <li className='msg-setting-main'>
+                                <h5>{p.chatText}</h5>
+                              </li>
+
+                            </ul>
                           </div>
                         </div>
-                      </li>
-              )
-              
-            }
-              
-            
-            else{
-            return(
-              <li className='sent'>
-            <div className='media'>
-              <div
-                className='profile mr-4'
-                style={{
-                  backgroundImage: `url('/assets/images/avtar/3.jpg')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  display: 'block',
-                }}
-              >
-                <img
-                  className='bg-img'
-                  src='/assets/images/avtar/3.jpg'
-                  alt='Avatar'
-                  style={{ display: 'none' }}
-                />
-              </div>
-              <div className='media-body'>
-                <div className='contact-name'>
-                  <h5>{p.id}</h5>
-                  
-                  <ul className='msg-box'>
-                    <li className='msg-setting-main'>
-                      <h5>{p.chatText}</h5>
+                      </div>
                     </li>
-                    <li className='msg-setting-main'>
-                    
-                      
+                  )
+
+                }
+
+
+                else {
+                  return (
+                    <li className='sent'>
+                      <div className='media'>
+                        <div
+                          className='profile mr-4'
+                          style={{
+                            backgroundImage: `url('/assets/images/avtar/3.jpg')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            display: 'block',
+                          }}
+                        >
+                          <img
+                            className='bg-img'
+                            src='/assets/images/avtar/3.jpg'
+                            alt='Avatar'
+                            style={{ display: 'none' }}
+                          />
+                        </div>
+                        <div className='media-body'>
+                          <div className='contact-name'>
+                            <h5>{p.id}</h5>
+
+                            <ul className='msg-box'>
+                              <li className='msg-setting-main'>
+                                <h5>{p.chatText}</h5>
+                              </li>
+                              <li className='msg-setting-main'>
+
+
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-            )
-        }
-       
-      }
-      )}
-               
-                
-              </>
-            
-          
-            
-           
+                  )
+                }
+
+              }
+              )}
+
+
+            </>
+
+
+
+
           </ul>
         </div>
       </div>
       <div className='message-input'>
-      <div className='wrap emojis-main'>
-        
+        <div className='wrap emojis-main'>
 
-      
-        <input
-          className='setemoj'
-          id="chatinn"
-          type='text'
-          placeholder='Write your message...'
-        
-          onChange={(c)=> setChat(c.target.value)}
-        />
-       
-      
-        <button
-          className={`submit icon-btn btn-primary $`}
-          onClick={handlepost}
-        >
-          <Send />
-        </button>
+
+
+          <input
+            className='setemoj'
+            id="chatinn"
+            type='text'
+            placeholder='Write your message...'
+
+            onChange={(c) => setChat(c.target.value)}
+          />
+
+
+          <button
+            className={`submit icon-btn btn-primary $`}
+            onClick={handlepost}
+          >
+            <Send />
+          </button>
+        </div>
       </div>
-    </div>
     </>
   ) : (
-      ''
-    );
+    ''
+  );
 };
 
 export default CustomChat;
