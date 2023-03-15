@@ -10,7 +10,7 @@ Run the webapp using ‘npm run dev’ or ‘npm run start’
 
 For the integrated Art gallery used 
 
-you can find the WebGL files here
+you can find the WebGL files here 
 https://github.com/nosselil53/Solcietygallery
 
 You can find the unity project folder here
